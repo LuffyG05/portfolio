@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Karthik Kumar – IAM Engineer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;
+  --border:#30363d;--accent:#58a6ff;--accent2:#3fb950;
+  --text:#e6edf3;--muted:#8b949e;--warn:#d29922;
+  --font:'Segoe UI',system-ui,sans-serif;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;font-size:15px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:12px 0}
+nav .inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-weight:600;font-size:15px;color:var(--text)}
+nav .logo span{color:var(--accent)}
+nav ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
+nav ul a{font-size:13px;color:var(--muted)}
+nav ul a:hover{color:var(--text);text-decoration:none}
+#hero{padding:80px 0 60px;border-bottom:1px solid var(--border)}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--muted);margin-bottom:20px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-size:42px;font-weight:700;line-height:1.15;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.tagline{font-size:16px;color:var(--muted);max-width:540px;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:9px 20px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:opacity .15s}
+.btn-primary{background:var(--accent);color:#0d1117}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn:hover{opacity:.85}
+.hero-stats{display:flex;gap:32px;margin-top:40px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-num{font-size:26px;font-weight:700;color:var(--accent)}
+.stat-label{font-size:12px;color:var(--muted)}
+section{padding:60px 0;border-bottom:1px solid var(--border)}
+.sec-label{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.sec-title{font-size:26px;font-weight:600;margin-bottom:8px}
+.sec-sub{color:var(--muted);font-size:14px;margin-bottom:32px}
+.skills-grid{display:flex;flex-wrap:wrap;gap:8px}
+.skill{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-size:13px;color:var(--muted);transition:border-color .15s}
+.skill:hover{border-color:var(--accent);color:var(--text)}
+.exp-item{display:flex;gap:20px;margin-bottom:28px}
+.exp-line{display:flex;flex-direction:column;align-items:center}
+.exp-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.exp-vline{width:2px;flex:1;background:var(--border);margin-top:4px}
+.exp-body{flex:1;padding-bottom:8px}
+.exp-role{font-weight:600;font-size:15px}
+.exp-meta{font-size:12px;color:var(--muted);margin:2px 0 8px}
+.exp-desc{font-size:14px;color:var(--muted);line-height:1.6}
+.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:16px}
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.proj-title{font-weight:600;font-size:16px}
+.proj-badge{background:rgba(210,153,34,.12);border:1px solid rgba(210,153,34,.4);color:var(--warn);border-radius:20px;padding:2px 10px;font-size:11px}
+.proj-desc{font-size:14px;color:var(--muted);margin-bottom:14px;line-height:1.7}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);color:var(--accent);border-radius:4px;padding:2px 8px;font-size:12px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.cert-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px}
+.cert-name{font-size:14px;font-weight:500;margin-bottom:4px}
+.cert-issuer{font-size:12px;color:var(--muted)}
+.cert-status{display:inline-block;margin-top:8px;font-size:11px;padding:2px 8px;border-radius:20px}
+.status-done{background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.3);color:var(--accent2)}
+.status-progress{background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);color:var(--accent)}
+
+/* AI Section */
+#ai-section{padding:60px 0}
+.ai-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px}
+.ai-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.ai-tab{padding:8px 18px;border-radius:6px;font-size:13px;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:.15s}
+.ai-tab.active{background:var(--accent);color:#0d1117;border-color:var(--accent)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+input,textarea,select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 12px;color:var(--text);font-family:var(--font);font-size:14px;outline:none;transition:border-color .15s}
+input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+textarea{min-height:100px;resize:vertical}
+.field-label{font-size:12px;color:var(--muted);margin-bottom:5px;display:block}
+.field{margin-bottom:14px}
+.jd-area{min-height:130px}
+.generate-btn{background:var(--accent);color:#0d1117;border:none;border-radius:6px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;width:100%;margin-top:6px;transition:opacity .15s}
+.generate-btn:hover{opacity:.85}
+.generate-btn:disabled{opacity:.5;cursor:not-allowed}
+.ai-output{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:16px;font-size:14px;color:var(--text);line-height:1.8;white-space:pre-wrap;display:none}
+.ai-output.visible{display:block}
+.generating{color:var(--muted);font-style:italic}
+.output-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.action-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;transition:.15s}
+.action-btn:hover{border-color:var(--accent);color:var(--text)}
+.matched-skills{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 16px}
+.mskill{border-radius:4px;padding:3px 10px;font-size:12px}
+.mskill.match{background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.3);color:var(--accent2)}
+.mskill.gap{background:rgba(210,153,34,.1);border:1px solid rgba(210,153,34,.3);color:var(--warn)}
+.skills-legend{font-size:11px;color:var(--muted);margin-bottom:8px}
+
+.contact-links{display:flex;flex-wrap:wrap;gap:12px}
+.contact-link{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 18px;font-size:14px;color:var(--text);transition:border-color .15s}
+.contact-link:hover{border-color:var(--accent);text-decoration:none;color:var(--accent)}
+footer{text-align:center;padding:32px;font-size:13px;color:var(--muted)}
+.divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="logo">KK<span>.</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#ai-section">AI Tools</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <section id="hero">
+    <div class="badge"><span class="dot"></span> Open to opportunities</div>
+    <h1>Karthik <span>Kumar</span></h1>
+    <p class="tagline">Azure Entra ID Engineer & IAM Specialist — securing identities for 35,000+ users across hybrid cloud environments.</p>
+    <div class="hero-btns">
+      <a href="#ai-section"><button class="btn btn-primary">AI Resume & Cover Letter</button></a>
+      <a href="#contact"><button class="btn btn-outline">Get in Touch</button></a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">4.5+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-num">35K+</span><span class="stat-label">Global Users Managed</span></div>
+      <div class="stat"><span class="stat-num">70–80%</span><span class="stat-label">Ticket Reduction</span></div>
+      <div class="stat"><span class="stat-num">225+</span><span class="stat-label">Support Hours Saved</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-label">About</div>
+    <div class="sec-title">Identity. Security. Automation.</div>
+    <p class="sec-sub">Building resilient IAM infrastructure at enterprise scale.</p>
+    <p style="color:var(--muted);font-size:14px;max-width:680px;margin-bottom:28px;line-height:1.8">
+      I'm an Azure Entra ID Engineer at NielsenIQ, designing and operating cloud and hybrid identity infrastructure for a globally distributed workforce. My work spans Conditional Access, PIM, Zero Trust architecture, and identity automation — all in a SOC 2 compliant environment. I recently built an award-winning self-service identity platform that won NielsenIQ's Innovibe 2.0 Innovation Contest.
+    </p>
+    <div class="sec-label" style="margin-bottom:12px">Core skills</div>
+    <div class="skills-grid">
+      <span class="skill">Microsoft Entra ID</span><span class="skill">Azure AD Connect</span><span class="skill">Conditional Access</span><span class="skill">MFA & SSPR</span><span class="skill">PIM</span><span class="skill">Zero Trust</span><span class="skill">RBAC</span><span class="skill">SSO</span><span class="skill">PowerShell</span><span class="skill">Microsoft Graph API</span><span class="skill">Azure Key Vault</span><span class="skill">Microsoft Sentinel</span><span class="skill">Defender for Endpoint</span><span class="skill">SOC 2 Compliance</span><span class="skill">ServiceNow</span><span class="skill">Identity Governance</span><span class="skill">ITIL</span><span class="skill">Python</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-label">Experience</div>
+    <div class="sec-title">Where I've worked</div>
+    <p class="sec-sub">4.5+ years at NielsenIQ across three progressive roles.</p>
+    <div class="exp-item">
+      <div class="exp-line"><div class="exp-dot"></div><div class="exp-vline"></div></div>
+      <div class="exp-body">
+        <div class="exp-role">Azure Entra ID Engineer – IAM</div>
+        <div class="exp-meta">NielsenIQ · Sep 2024 – Present · Chennai, India</div>
+        <div class="exp-desc">Design and operate on-premises AD and Azure Entra ID services for 35,000+ users — including Conditional Access, PIM, Identity Protection, and full identity lifecycle management. Automate workflows using PowerShell and Microsoft Graph API. Lead access reviews, admin audits, and SOC 2 compliance. Handle L2/L3 escalations via ServiceNow with ITIL-aligned SLAs.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-line"><div class="exp-dot"></div><div class="exp-vline"></div></div>
+      <div class="exp-body">
+        <div class="exp-role">Senior Data Processing Analyst</div>
+        <div class="exp-meta">NielsenIQ · Jul 2023 – Sep 2024 · Chennai, India</div>
+        <div class="exp-desc">Improved operational delivery timelines by 10% through process optimisation. Coordinated with 4–5 cross-functional teams for system reliability. Received the NOC Award for Exceptional Performance.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-line"><div class="exp-dot"></div></div>
+      <div class="exp-body">
+        <div class="exp-role">Data Processing Analyst</div>
+        <div class="exp-meta">NielsenIQ · Aug 2021 – Jun 2023 · Chennai, India</div>
+        <div class="exp-desc">Processed and validated large datasets using SQL and Excel. Promoted to Senior Analyst within 2 years for outstanding performance and process contributions.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="sec-label">Key Project</div>
+    <div class="sec-title">Secure self-service identity platform</div>
+    <p class="sec-sub">Innovibe 2.0 Innovation Contest winner · NielsenIQ · 2025</p>
+    <div class="project-card">
+      <div class="proj-header">
+        <div class="proj-title">IVR-driven enterprise identity platform</div>
+        <div class="proj-badge">🏆 Innovibe 2.0 Winner</div>
+      </div>
+      <p class="proj-desc">Designed and deployed an enterprise IVR-driven identity platform integrating Genesys Cloud, Azure Entra ID, Microsoft Authenticator, and ServiceNow — covering end-to-end identity lifecycle management. Implemented hybrid identity verification with Entra ID authentication, TOTP-based MFA, and least-privilege access aligned with Zero Trust and SOC 2 compliance. Secured credentials using Azure Key Vault. Automated lifecycle workflows with Microsoft Graph API and PowerShell.</p>
+      <p class="proj-desc" style="color:var(--accent2);margin-bottom:14px">Result: 70–80% reduction in service desk tickets · 225+ support hours saved in 3 months</p>
+      <div class="proj-tags">
+        <span class="tag">Azure Entra ID</span><span class="tag">Genesys Cloud</span><span class="tag">Microsoft Graph API</span><span class="tag">Azure Key Vault</span><span class="tag">PowerShell</span><span class="tag">TOTP / MFA</span><span class="tag">Zero Trust</span><span class="tag">ServiceNow</span><span class="tag">SOC 2</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="certs">
+    <div class="sec-label">Certifications</div>
+    <div class="sec-title">Credentials</div>
+    <p class="sec-sub" style="margin-bottom:20px">Microsoft · EC-Council</p>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-name">SC-300 – Identity & Access Administrator</div><div class="cert-issuer">Microsoft</div><span class="cert-status status-progress">In progress · 2026</span></div>
+      <div class="cert-card"><div class="cert-name">AZ-900 – Azure Fundamentals</div><div class="cert-issuer">Microsoft</div><span class="cert-status status-done">Certified</span></div>
+      <div class="cert-card"><div class="cert-name">CEH – Certified Ethical Hacker</div><div class="cert-issuer">EC-Council</div><span class="cert-status status-done">Certified</span></div>
+      <div class="cert-card"><div class="cert-name">Ethical Hacking Essentials</div><div class="cert-issuer">EC-Council</div><span class="cert-status status-done">Certified</span></div>
+    </div>
+  </section>
+
+  <!-- AI TOOLS SECTION -->
+  <section id="ai-section">
+    <div class="sec-label">AI-powered</div>
+    <div class="sec-title">Resume & cover letter generator</div>
+    <p class="sec-sub">Paste a job description — Claude will match Karthik's skills to it, then generate a tailored resume or cover letter optimised for that role.</p>
+
+    <div class="ai-box">
+      <div class="ai-tabs">
+        <button class="ai-tab active" onclick="setTab('cover')">✉ Cover letter</button>
+        <button class="ai-tab" onclick="setTab('resume')">📄 Tailored resume</button>
+        <button class="ai-tab" onclick="setTab('bio')">👤 Professional bio</button>
+      </div>
+
+      <!-- JD input — shared -->
+      <div class="field">
+        <label class="field-label">Job description (paste here for best results)</label>
+        <textarea id="jd" class="jd-area" placeholder="Paste the full job description here. Claude will extract required skills and tailor the output to match..."></textarea>
+      </div>
+
+      <!-- Cover letter extras -->
+      <div id="cover-form">
+        <div class="form-row">
+          <div class="field"><label class="field-label">Target role</label><input id="cl-role" placeholder="e.g. IAM Engineer, Cloud Security Engineer"/></div>
+          <div class="field"><label class="field-label">Company name</label><input id="cl-company" placeholder="e.g. Microsoft, Okta"/></div>
+        </div>
+        <div class="field"><label class="field-label">Extra context (optional)</label><input id="cl-notes" placeholder="e.g. fully remote, startup, need someone hands-on with Okta"/></div>
+      </div>
+
+      <!-- Resume extras -->
+      <div id="resume-form" style="display:none">
+        <div class="form-row">
+          <div class="field"><label class="field-label">Target role title</label><input id="res-role" placeholder="e.g. Senior IAM Engineer"/></div>
+          <div class="field"><label class="field-label">Company (optional)</label><input id="res-company" placeholder="e.g. Palo Alto Networks"/></div>
+        </div>
+        <div class="field"><label class="field-label">Format</label>
+          <select id="res-format">
+            <option value="full">Full resume (all sections)</option>
+            <option value="summary">Professional summary + skills only</option>
+            <option value="bullets">Rewritten bullet points only</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Bio extras -->
+      <div id="bio-form" style="display:none">
+        <div class="form-row">
+          <div class="field"><label class="field-label">Audience / platform</label><input id="bio-audience" placeholder="e.g. LinkedIn, conference bio, recruiter"/></div>
+          <div class="field"><label class="field-label">Tone</label><input id="bio-tone" placeholder="e.g. formal, conversational, technical"/></div>
+        </div>
+      </div>
+
+      <!-- Skill match preview -->
+      <div id="skill-match-box" style="display:none">
+        <hr class="divider"/>
+        <div class="skills-legend">Skills detected from JD — <span style="color:var(--accent2)">■ matched</span> · <span style="color:var(--warn)">■ gap / not primary</span></div>
+        <div class="matched-skills" id="skill-chips"></div>
+      </div>
+
+      <button class="generate-btn" id="gen-btn" onclick="generate()">Generate ✦</button>
+      <div class="ai-output" id="ai-output"></div>
+      <div class="output-actions" id="output-actions" style="display:none">
+        <button class="action-btn" onclick="copyText()">Copy text</button>
+        <button class="action-btn" onclick="downloadTxt()">Download .txt</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-label">Contact</div>
+    <div class="sec-title">Let's connect</div>
+    <p class="sec-sub" style="margin-bottom:24px">Open to IAM, cloud identity, and security engineering roles.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:karthikkumar2704@gmail.com"><span>✉</span> karthikkumar2704@gmail.com</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/karthik-kumar-380477205/" target="_blank"><span>in</span> LinkedIn</a>
+      <a class="contact-link" href="tel:+919514370847"><span>☎</span> +91 95143 70847</a>
+      <a class="contact-link"><span>📍</span> Chennai, India</a>
+    </div>
+  </section>
+
+</div>
+<footer>Built with Claude · Karthik Kumar © 2025</footer>
+
+<script>
+let activeTab = 'cover';
+
+const PROFILE = `
+NAME: Karthik Kumar
+CONTACT: karthikkumar2704@gmail.com | +91 9514370847 | linkedin.com/in/karthik-kumar-380477205 | Chennai, India
+
+SUMMARY: Azure Entra ID Engineer and IAM specialist with 4.5+ years of hands-on experience designing, implementing, and supporting on-premises Active Directory and cloud-based Microsoft identity platforms at NielsenIQ (35,000+ global users). Deep expertise in hybrid and cloud identity architecture — Entra ID, Azure AD Connect, Conditional Access, MFA, SSO, PIM, AAD Identity Protection, RBAC, Zero Trust, and full identity lifecycle management. Proven ability to design scalable, resilient IAM solutions, craft operational runbooks, and automate identity workflows using PowerShell and Microsoft Graph API. Experienced in SOC 2 compliance environments and cross-functional collaboration. Engineered an award-winning self-service identity platform that reduced ticket volume by 70–80% and saved 225+ support hours. Holds CEH, AZ-900; SC-300 in progress (2026).
+
+SKILLS:
+- Identity & Access Management: Microsoft Entra ID (Azure AD), Active Directory, Azure AD Connect, ADFS Awareness, Conditional Access, MFA, AAD Identity Protection, SSPR, RBAC, PIM, SSO, Managed Identities, Service Principals, Least Privilege, Access Reviews, Zero Trust, Identity Lifecycle Management, Identity Governance
+- Hybrid & Cloud Identity: Hybrid Cloud Identity Architecture, Azure AD Connect Sync, On-premises AD Integration, Cloud Device Management, AAD Licensing, Third-party Identity Integration, Federated SSO
+- Credential & Secret Security: Azure Key Vault, PKI, Certificate Awareness, Secret Management, Credential Lifecycle, Passwordless Authentication, TOTP-based Validation
+- Security & Compliance: SOC 2 Compliance, Microsoft Sentinel, Defender for Endpoint, SIEM, CEH, Audit Logging, Incident Response Playbooks, ISO 27001 Awareness
+- Automation & Scripting: PowerShell, Python, Microsoft Graph API, Automated IAM Processes, ServiceNow Workflows
+- Cloud & Infrastructure: Microsoft Azure, Azure Portal, Azure VMs, Hybrid Cloud, Azure Key Vault
+- Networking & OS: DNS, TCP/IP, VPN, Windows Server, Linux
+- Governance & Documentation: ITIL, SOC 2 Audit Support, Operational Runbooks, SOPs, SLA Management, IAM Reporting
+- ITSM & Support Tools: ServiceNow (ITSM), L2/L3 Escalation Support
+
+EXPERIENCE:
+1. Azure Entra ID Engineer – Identity & Access Management | NielsenIQ, Chennai | Sep 2024 – Present
+- Design, implement, and support on-premises AD and Azure Entra ID services for SSO, MFA, Zero Trust, user access provisioning, automation, integrations, and full identity lifecycle management across 35,000+ global users
+- Plan and deploy AAD identity services including Conditional Access policies, AAD Identity Protection, PIM, identity governance, and hybrid/cloud device management
+- Manage scalable cloud identity deployment architecture — maintaining SOC 2 compliance, leading periodic access reviews, ensuring service availability
+- Collaborate with IT and product teams for SSO integrations and user registration workflows
+- Conduct periodic access reviews and admin privilege audits; enforce least-privilege access and Separation of Duties; remediate rogue, orphaned, and dormant accounts
+- Automate identity lifecycle processes using PowerShell and Microsoft Graph API
+- Craft, review, and maintain operational runbooks, SOPs, and compliance documentation
+- Handle escalated L2/L3 identity incidents (authentication failures, sync issues, access anomalies) via ServiceNow with ITIL-aligned SLA compliance
+
+2. Senior Data Processing Analyst | NielsenIQ, Chennai | Jul 2023 – Sep 2024
+- Improved operational delivery timelines by 10% through process optimisation and automation
+- Coordinated with 4–5 cross-functional teams to maintain system reliability and data integrity
+- Awarded NOC Award for Exceptional Performance
+
+3. Data Processing Analyst | NielsenIQ, Chennai | Aug 2021 – Jun 2023
+- Processed and validated large datasets using SQL and Excel
+- Promoted to Senior Analyst within 2 years
+
+KEY PROJECT:
+Secure Self-Service Identity Platform (2025) — Winner, Innovibe 2.0 Innovation Contest, NielsenIQ
+- Designed and deployed an enterprise IVR-driven identity platform integrating Genesys Cloud, Azure Entra ID, Microsoft Authenticator, and ServiceNow
+- Implemented hybrid identity verification using Entra ID authentication, TOTP-based MFA validation, and least-privilege access aligned with Zero Trust and SOC 2 compliance
+- Implemented Azure Key Vault for credential and secret management, eliminating plaintext credential exposure
+- Automated identity lifecycle workflows using Microsoft Graph API and PowerShell
+- Reduced identity-related service desk tickets by 70–80%, saving 225+ support hours within 3 months
+
+CERTIFICATIONS:
+- SC-300: Microsoft Identity and Access Administrator Associate — Expected 2026
+- AZ-900: Microsoft Azure Fundamentals — Certified
+- CEH: Certified Ethical Hacker — EC-Council — Certified
+- Ethical Hacking Essentials — EC-Council — Certified
+
+EDUCATION:
+- Master of Computer Applications (MCA) — University of Madras — 2022–2024
+- BSc Computer Science — D.G. Vaishnav College — 2018–2021
+
+ACHIEVEMENTS:
+- Winner – Innovibe 2.0 Innovation Contest (2025) for enterprise identity lifecycle automation
+- NOC Award for Exceptional Performance – NielsenIQ
+- Promoted to Senior Analyst within 2 years
+`;
+
+const MY_SKILLS = [
+  'entra id','azure ad','active directory','ad connect','conditional access','mfa','sspr','pim','sso','rbac','zero trust',
+  'identity governance','identity lifecycle','managed identities','service principals','least privilege','access reviews',
+  'federated sso','passwordless','totp','azure key vault','pki','secret management','soc 2','sentinel','defender',
+  'siem','ceh','iso 27001','audit','incident response','powershell','python','graph api','servicenow','itil',
+  'azure','azure portal','azure vms','hybrid cloud','dns','tcp/ip','vpn','windows server','linux','sql','runbooks','sops'
+];
+
+function setTab(t) {
+  activeTab = t;
+  document.querySelectorAll('.ai-tab').forEach((el,i) => {
+    el.classList.toggle('active', (i===0&&t==='cover')||(i===1&&t==='resume')||(i===2&&t==='bio'));
+  });
+  document.getElementById('cover-form').style.display = t==='cover'?'':'none';
+  document.getElementById('resume-form').style.display = t==='resume'?'':'none';
+  document.getElementById('bio-form').style.display = t==='bio'?'':'none';
+  document.getElementById('ai-output').classList.remove('visible');
+  document.getElementById('output-actions').style.display='none';
+}
+
+document.getElementById('jd').addEventListener('input', debounce(analyseJD, 600));
+
+function debounce(fn, ms) {
+  let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+}
+
+function analyseJD() {
+  const jd = document.getElementById('jd').value.toLowerCase();
+  if (jd.length < 40) { document.getElementById('skill-match-box').style.display='none'; return; }
+  const box = document.getElementById('skill-match-box');
+  const chips = document.getElementById('skill-chips');
+  // extract words/phrases from JD
+  const found = MY_SKILLS.filter(s => jd.includes(s));
+  // also pull unknown keywords from JD (simple heuristic: capitalised or technical-looking words)
+  const jdWords = jd.match(/\b[a-z][a-z0-9\-\.]{3,}\b/g) || [];
+  const techish = [...new Set(jdWords)].filter(w =>
+    !['with','that','this','from','have','been','will','your','their','team','work','role','must','able','good','well','also','both','into','more','each','over','upon','they','when','where','some','such','other','like','include','including','using','skills','experience','knowledge'].includes(w)
+  );
+  // gaps: things in JD not obviously in my skills
+  const gaps = techish.filter(w => !MY_SKILLS.some(s => s.includes(w) || w.includes(s))).slice(0, 8);
+
+  chips.innerHTML = '';
+  found.forEach(s => {
+    const el = document.createElement('span');
+    el.className = 'mskill match';
+    el.textContent = s;
+    chips.appendChild(el);
+  });
+  gaps.forEach(s => {
+    const el = document.createElement('span');
+    el.className = 'mskill gap';
+    el.textContent = s;
+    chips.appendChild(el);
+  });
+  box.style.display = found.length || gaps.length ? '' : 'none';
+}
+
+async function generate() {
+  const btn = document.getElementById('gen-btn');
+  const out = document.getElementById('ai-output');
+  const acts = document.getElementById('output-actions');
+  const jd = document.getElementById('jd').value.trim();
+
+  let prompt = '';
+  const jdSection = jd ? `\n\nJOB DESCRIPTION:\n${jd}` : '';
+
+  if (activeTab === 'cover') {
+    const role = document.getElementById('cl-role').value.trim() || 'IAM Engineer';
+    const company = document.getElementById('cl-company').value.trim() || 'the company';
+    const notes = document.getElementById('cl-notes').value.trim();
+    prompt = `Write a professional, tailored cover letter for Karthik Kumar applying for the role of "${role}" at "${company}". 
+${jd ? 'Carefully analyse the job description and highlight skills and experiences from his profile that directly match the JD requirements. Naturally weave in JD-specific keywords.' : 'Highlight his most relevant IAM and cloud identity experience.'}
+Keep it 260–320 words, professional yet engaging. Do not invent skills he does not have.
+${notes ? 'Extra context: '+notes : ''}
+
+CANDIDATE PROFILE:
+${PROFILE}${jdSection}`;
+  } else if (activeTab === 'resume') {
+    const role = document.getElementById('res-role').value.trim() || 'IAM Engineer';
+    const company = document.getElementById('res-company').value.trim() || '';
+    const fmt = document.getElementById('res-format').value;
+    const fmtInstr = fmt === 'full'
+      ? 'Write a complete, ATS-optimised resume in plain text format with all sections: Professional Summary, Technical Skills, Work Experience (with rewritten bullet points), Key Project, Certifications, and Education.'
+      : fmt === 'summary'
+      ? 'Write only the Professional Summary (4–5 sentences) and a Technical Skills section, grouped by category, optimised for this role.'
+      : 'Rewrite only the Work Experience bullet points to be stronger, more impactful, and aligned with the JD. Keep all original facts.';
+    prompt = `Generate a tailored resume for Karthik Kumar targeting the role of "${role}"${company ? ' at '+company : ''}.
+${jd ? 'Analyse the job description carefully. Prioritise and emphasise skills and experience that match the JD. Incorporate relevant JD keywords naturally for ATS optimisation. Do NOT invent skills or experience he does not have.' : ''}
+${fmtInstr}
+Use plain text format (no markdown, no asterisks, use dashes for bullets). Keep it truthful and based only on his actual profile.
+
+CANDIDATE PROFILE:
+${PROFILE}${jdSection}`;
+  } else {
+    const audience = document.getElementById('bio-audience').value.trim() || 'LinkedIn';
+    const tone = document.getElementById('bio-tone').value.trim() || 'professional';
+    prompt = `Write a ${tone} third-person professional bio for Karthik Kumar, tailored for ${audience}.
+${jd ? 'Use the job description to emphasise the most relevant skills and achievements.' : ''}
+Around 130–160 words. Highlight the Innovibe 2.0 win. End with what he is looking for.
+Use only information from his actual profile — do not invent anything.
+
+CANDIDATE PROFILE:
+${PROFILE}${jdSection}`;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Generating…';
+  out.className = 'ai-output visible generating';
+  out.textContent = activeTab === 'resume' ? 'Analysing JD and tailoring your resume…' : 'Writing for you…';
+  acts.style.display = 'none';
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{role:'user', content: prompt}]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.map(b => b.text||'').join('') || 'Something went wrong. Please try again.';
+    out.classList.remove('generating');
+    out.textContent = text;
+    acts.style.display = 'flex';
+  } catch(e) {
+    out.classList.remove('generating');
+    out.textContent = 'Error generating content. Please try again.';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Generate ✦';
+}
+
+function copyText() {
+  const text = document.getElementById('ai-output').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.action-btn');
+    btns[0].textContent = 'Copied!';
+    setTimeout(() => btns[0].textContent = 'Copy text', 2000);
+  });
+}
+
+function downloadTxt() {
+  const text = document.getElementById('ai-output').textContent;
+  const label = activeTab === 'resume' ? 'resume' : activeTab === 'cover' ? 'cover-letter' : 'bio';
+  const blob = new Blob([text], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `karthik-kumar-${label}.txt`;
+  a.click();
+}
+</script>
+</body>
+</html>
